@@ -71,22 +71,22 @@ Run the following commands to verify uninstallation works:
     choco uninstall docker-machine
     docker-machine // shouldn't work
 
-#### 5. Upload the package
+#### 5. Push the package
 
-> **CAUTION:** You can upload a version only once (chocolatey does not
-> allow overwriting packages). Therefore be careful since you can do
-> this step only once without changing `<version>` string. Note, you _can_
-> upload multiple times until the package has been approved.
-
+You need your API key to push Chocolatey packages.
 Go to http://chocolatey.org and log in.
 
-Click **Upload** tab.
+Go to your account settings and show your API key.
 
-Choose the binary.
+Copy the example command with your key
 
-Review the version number and details.
+    choco apiKey -k your-api-key -source https://chocolatey.org/
 
-Hit "Upload" button.
+Push the package
+
+    choco push docker-machine.0.5.0.nupkg
+
+While in moderation you can push the package again to fix errors in the description or installation script etc.
 
 #### 6. Approval Process
 
